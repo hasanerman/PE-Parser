@@ -10,46 +10,40 @@ I built this tool to provide a clean, fast, and dependency-free static analysis 
 
 ## Key Features
 
-### 1. Immersive Dark Theme (Catppuccin Mocha)
-- The entire GUI is custom-drawn using the Catppuccin Mocha color palette.
-- Completely customized flat tab buttons with accent indicator bars.
-- Custom-painted, dark-themed buttons and dialog elements.
-- Dark-themed ListView columns and header controls, eliminating standard Windows light gray artifacts.
-- Proportional status bar displaying system and file metrics.
 
-### 2. Comprehensive Header Analysis
+### 1. Comprehensive Header Analysis
 - DOS Header: Validation of MZ signature and recovery of PE header offset.
 - File Header: Parsing machine type, number of sections, characteristics flags, and compilation timestamp.
 - Optional Header: Resolution of major/minor linker, operating system, and subsystem versions, entry point address, and memory layout parameters.
 - Security Mitigations: Static check for ASLR (Dynamic Base), DEP/NX (NX Compat), Control Flow Guard (CFG), High Entropy VA, and Force Integrity.
 
-### 3. Section and Entropy Analysis
+### 2. Section and Entropy Analysis
 - Individual section properties listed alongside computed Shannon entropy.
 - Sections with high entropy (greater than 7.2) are highlighted, indicating packing or encryption.
 - Writable and Executable (W+X) sections are flagged immediately as high-risk.
 
-### 4. Imports & Exports with Live Filtering
+### 3. Imports & Exports with Live Filtering
 - Import Address Table (IAT) walker showing DLL names and imported functions.
 - Export Address Table (EAT) parser showing exported function names, ordinals, RVAs, and forwarders.
 - Real-time search/filter bars integrated into both panels, allowing instant query resolution across thousands of functions.
 - Highlighted import references for high-risk Win32 API calls (known process injection, evasion, or hook techniques).
 
-### 5. String Extraction & Network Indicator Scanner
+### 4. String Extraction & Network Indicator Scanner
 - Scans binary sections and headers for printable ASCII and UTF-16 Unicode strings (minimum length of 4 characters).
 - Filters extracted strings using pattern matching to identify IPv4 addresses, URLs, and domains.
 - Lists the exact section, file offset, and RVA of each string.
 - Live search filtering and one-click toggle to isolate only network indicators.
 
-### 6. Version and PDB Debug Information
+### 5. Version and PDB Debug Information
 - Resolves RT_VERSION resources dynamically using Windows Version APIs to display company name, product version, file description, and copyright metadata.
 - Parses the debug directory for CodeView (RSDS/NB10) blocks to extract compiler GUIDs, age, and local PDB build paths.
 
-### 7. Overlay Exporter
+### 6. Overlay Exporter
 - Automatically computes the physical boundaries of the PE file vs the actual file size.
 - Detects appended overlay payloads and displays their offset and size.
 - Includes a dedicated "Save Overlay" feature to dump the payload to a separate binary file.
 
-### 8. Structural Validation & JSON Export
+### 7. Structural Validation & JSON Export
 - Verifies header fields and reports mismatching PE checksum values.
 - Performs suspicious structural checks, warning of empty section names or anomalies.
 - Hand-built JSON exporter utility to dump all parsed structures into a clean JSON file for integration into external scripts.
@@ -86,46 +80,39 @@ Bu aracı, Windows çalıştırılabilir dosyaları (PE32 ve PE32+) üzerinde h�
 
 ## Öne Çıkan Özellikler
 
-### 1. Bütünsel Karanlık Tema (Catppuccin Mocha)
-- Tüm GUI pencereleri Catppuccin Mocha renk paletine uygun olarak özel olarak çizilir.
-- Tamamen özelleştirilmiş flat tab (sekme) butonları ve mor renkli aktiflik göstergeleri.
-- Yuvarlatılmış köşelere sahip, özel çizim karanlık butonlar ve girdi alanları.
-- ListView başlık sütunları dahil her şey karanlık temayla çizilerek Windows'un klasik gri renk uyumsuzlukları giderilmiştir.
-- Dosya ve mimari detaylarını gösteren orantılı durum çubuğu.
-
-### 2. Başlık Analizi (Header Parsing)
+### 1. Başlık Analizi (Header Parsing)
 - DOS Başlığı: Magic byte (MZ) doğrulaması ve PE başlığı offsetinin tespiti.
 - Dosya Başlığı: Makine mimarisi, bölüm sayısı, karakteristik bayraklar ve derleme zaman damgasının çözümlenmesi.
 - İsteğe Bağlı (Optional) Başlık: Giriş noktası (Address of Entry Point), Image Base değeri, alt sistem (subsystem), OS/bağlayıcı sürümleri ve bellek hizalama parametrelerinin dökümü.
 - Güvenlik Önlemleri Kontrolü: ASLR, DEP/NX, Control Flow Guard (CFG), High Entropy VA ve Force Integrity desteklerinin statik analizi.
 
-### 3. Bölüm (Section) ve Entropi Analizi
+### 2. Bölüm (Section) ve Entropi Analizi
 - Dosya bölümlerinin ham ve sanal adresleri, boyutları ve Shannon entropi değerleri.
 - Entropisi yüksek (7.2 ve üzeri) olan paketlenmiş veya şifrelenmiş bölümler sarı renkli uyarıyla gösterilir.
 - Hem yazılabilir hem çalıştırılabilir (W+X) durumda olan tehlikeli bölümler kırmızı renkli kritik bayrakla vurgulanır.
 
-### 4. Canlı Filtrelemeli Imports & Exports
+### 3. Canlı Filtrelemeli Imports & Exports
 - IAT (Import Address Table) tablosundan içeri aktarılan DLL ve API fonksiyonlarının tam dökümü.
 - EAT (Export Address Table) tablosundan dışarıya sunulan fonksiyon isimleri, RVA adresleri ve forwarder yönlendirmeleri.
 - Sekmelerin üstüne eklenen arama kutuları sayesinde binlerce fonksiyon arasından anlık arama ve filtreleme yapabilme kolaylığı.
 - İşletim sistemi manipülasyonu, enjeksiyon veya tespit atlatma amacıyla kullanılan yüksek riskli Win32 API fonksiyonlarının otomatik işaretlenmesi.
 
-### 5. String Ayıklayıcı ve Ağ Göstergesi Tarayıcı
+### 4. String Ayıklayıcı ve Ağ Göstergesi Tarayıcı
 - PE içerisindeki ASCII ve UTF-16 Unicode metinleri (minimum 4 karakter) otomatik tarar.
 - Ayıklanan metinler içindeki IPv4 adreslerini, URL yapılarını ve alan adlarını filtreler.
 - Metnin bulunduğu dosya offsetini, sanal adresini (RVA) ve ait olduğu bölüm adını gösterir.
 - Canlı arama kutusu ve tek tıklamayla sadece ağ göstergelerini (URL/IP) izole etme seçeneği.
 
-### 6. Sürüm Bilgileri ve PDB Sembol Yolları
+### 5. Sürüm Bilgileri ve PDB Sembol Yolları
 - RT_VERSION kaynak dosyalarını otomatik çözerek üretici firma, ürün adı, açıklama ve telif hakkı bilgilerini listeler.
 - Debug tablosundaki CodeView (RSDS/NB10) girdilerini parse ederek derleyicinin oluşturduğu PDB yolunu, GUID değerini ve yaş bilgisini çıkarır.
 
-### 7. Overlay Kaydedici (Dump Overlay)
+### 6. Overlay Kaydedici (Dump Overlay)
 - PE dosyasının bölümlerinin bittiği yer ile dosyanın diski kapladığı fiziksel boyut farkını hesaplayarak overlay verilerini tespit eder.
 - Overlay verisinin başlangıç offsetini ve boyutunu raporlar.
 - Toolbar ve menüdeki buton sayesinde overlay verisini `.bin` uzantılı ayrı bir dosya olarak kaydetme imkanı sunar.
 
-### 8. Yapısal Doğrulama ve JSON Dışa Aktarma
+### 7. Yapısal Doğrulama ve JSON Dışa Aktarma
 - PE Checksum doğrulama (Header checksum vs Gerçek checksum karşılaştırması).
 - Boş bölüm isimleri veya alışılmadık bölüm sayıları gibi anomalileri raporlama.
 - Elde edilen tüm analiz verilerini, harici betiklerle veya diğer araçlarla kolayca entegre edebilmenizi sağlayan yerleşik JSON dışa aktarma aracı.
