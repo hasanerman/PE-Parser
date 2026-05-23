@@ -134,3 +134,22 @@ Bu aracı, Windows çalıştırılabilir dosyaları (PE32 ve PE32+) üzerinde h�
 2. Derleme yapılandırmasını (Debug veya Release) ve hedef platformu (x86 veya x64) seçin.
 3. Proje dil standardının C++20 olarak ayarlandığından emin olun.
 4. Çözümü derleyin (Build).
+
+
+<img width="1291" height="810" alt="image" src="https://github.com/user-attachments/assets/f05cb9fc-bd34-4dc2-9074-e0bd3a6e9a7b" />
+<img width="1304" height="809" alt="image" src="https://github.com/user-attachments/assets/0e1f4999-14e7-4be7-a8a5-9b95f018925f" />
+<img width="1374" height="818" alt="image" src="https://github.com/user-attachments/assets/37e14472-7233-4322-b093-4bf5195191a3" />
+<img width="1321" height="814" alt="image" src="https://github.com/user-attachments/assets/bc165b62-079b-45a2-977a-cc8b824e9bbd" />
+<img width="1339" height="805" alt="image" src="https://github.com/user-attachments/assets/5c54e239-36bd-4fad-b1e2-dfa26c877ad0" />
+<img width="1295" height="791" alt="image" src="https://github.com/user-attachments/assets/4619aded-43ab-48ec-bf41-5228b0b12502" />
+<img width="1303" height="797" alt="image" src="https://github.com/user-attachments/assets/61c596ba-225a-4ae3-9170-7a078d3eaafc" />
+<img width="1919" height="1054" alt="image" src="https://github.com/user-attachments/assets/3f97fc46-dfbe-4314-9272-27fa47569aa9" />
+
+
+
+
+
+
+
+
+
