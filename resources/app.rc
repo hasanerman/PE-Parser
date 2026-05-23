@@ -1,0 +1,18 @@
+#include "resource.h"
+#include <windows.h>
+
+IDR_MAINMENU MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open PE File...\tCtrl+O",   ID_FILE_OPEN
+        MENUITEM "Export &JSON...\tCtrl+S",    ID_FILE_EXPORT
+        MENUITEM "Save &Overlay...",           ID_FILE_SAVE_OVERLAY
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit\tAlt+F4",              ID_FILE_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About",                     ID_HELP_ABOUT
+    END
+END
